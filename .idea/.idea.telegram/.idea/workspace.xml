@@ -11,10 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="724fb3c1-8c63-4154-b139-0909637b2f54" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/telegram-downloader/model/AddRangeTaskRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.telegram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.telegram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/telegram-downloader/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/telegram-downloader/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/telegram-downloader/sessions" beforeDir="false" afterPath="$PROJECT_DIR$/telegram-downloader/sessions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram-downloader/telegram-downloader.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/telegram-downloader/telegram-downloader.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/telegram.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +45,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bb06f64c178142b0b2d10172f56d4911e8e928/46/3f28ae1e/ThreadPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2f2b1d92f1ffcf2dabd664473f8c9dafa6039595ac228ce4b75a0f1619c5991/AsyncTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/53b0d531c06faf86bf2ae111a9a2dbce4c52a9153feb9966ade60289c71bf52/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6ef8e7d549f6bfb5b9eafaaa0ff48d8cbfc564f32be26323b5f60e63aef4dd1/SafeFileHandle.Windows.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9769f0874b89d9a174c39e6c977aef6d979daefa49c7f3c239ef268493ea12/SemaphoreSlim.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b6788580148d673bfdb5b15f4352c74f2b6f2255417806f1c796ccdbf8bf8bf/ThreadPoolWorkQueue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d8fcf94b84793270cc19674dbcff5e3b86ffb9666fd1ea9dc9eb9181f74a75/Client.Helpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de533de9e7b3ea79d36aeac96b6426559cfe9f3a96b1ab66b51ce3febeda25f/TimeSpan.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de8a243f75215d958afa80cf80a41b4981a44efea7db93bffcdaf7bd6ba378c0/Number.Parsing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e399fc861c188bd19ebde14346e2f5f2c1a54c1c0d6fbd5cbe05227afe6d/CollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/project/telegram/telegram-downloader/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -66,7 +68,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET 启动设置配置文件.telegram-downloader: http.executor": "Run",
+    ".NET 启动设置配置文件.telegram-downloader: http.executor": "Debug",
     ".NET 项目.telegram.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -107,7 +109,17 @@
       <option name="presentableId" value="Default" />
       <updated>1743762235451</updated>
       <workItem from="1743762237089" duration="6301000" />
+      <workItem from="1743770127911" duration="1339000" />
     </task>
+    <task id="LOCAL-00001" summary="dev">
+      <option name="closed" value="true" />
+      <created>1743769985220</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743769985220</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,5 +129,7 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev" />
   </component>
 </project>

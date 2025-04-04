@@ -1,4 +1,6 @@
 using downloader.model;
+using Microsoft.AspNetCore.Mvc;
+using telegram_downloader.model;
 using Telegram.config;
 using Telegram.manager;
 using Chat = Telegram.models.Chat;
@@ -22,5 +24,15 @@ app.MapGet(
         return "Task added";
     }
 );
+
+app.MapPost(
+    "/addRangeTask",
+    ([FromBody] AddRangeTaskRequest request) =>
+    {
+        foreach (var i in Enumerable.Range(request.BeginMessageId, request.EndMessageId - request.BeginMessageId + 1))
+            manager.AddTask(new DownloadTask<Chat>(new Chat(request.ChatId, i)));
+
+        return "Task added";
+    });
 
 app.Run();
