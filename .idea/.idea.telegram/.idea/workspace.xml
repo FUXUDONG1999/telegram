@@ -11,17 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="724fb3c1-8c63-4154-b139-0909637b2f54" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/downloader/manager/DownloadManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloader/model/DownloadTask.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloader/model/DownloadTaskStatus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/downloader/queue/DownloadTaskQueue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/telegram/manager/TelegramDownloadManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/telegram/models/Chat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram.sln" beforeDir="false" afterPath="$PROJECT_DIR$/telegram.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram/client/TelegramProxyClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/client/TelegramProxyClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram/config/TelegramConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/config/TelegramConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram/telegram.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/telegram.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.telegram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.telegram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram-downloader/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/telegram-downloader/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram-downloader/sessions" beforeDir="false" afterPath="$PROJECT_DIR$/telegram-downloader/sessions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram-downloader/telegram-downloader.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/telegram-downloader/telegram-downloader.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "FUXUDONG1999"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;FUXUDONG1999&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/FUXUDONG1999/telegram.git",
-    "accountId": "24119576-9e7c-44af-97be-781c59640468"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FUXUDONG1999/telegram.git&quot;,
+    &quot;accountId&quot;: &quot;24119576-9e7c-44af-97be-781c59640468&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/831d23e56149cd59c40fc00c7feb7c5334bd19c4/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bb06f64c178142b0b2d10172f56d4911e8e928/46/3f28ae1e/ThreadPool.cs" root0="SKIP_HIGHLIGHTING" />
@@ -56,12 +49,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d8fcf94b84793270cc19674dbcff5e3b86ffb9666fd1ea9dc9eb9181f74a75/Client.Helpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de533de9e7b3ea79d36aeac96b6426559cfe9f3a96b1ab66b51ce3febeda25f/TimeSpan.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e399fc861c188bd19ebde14346e2f5f2c1a54c1c0d6fbd5cbe05227afe6d/CollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/project/telegram/telegram-downloader/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2vGCt0p87HPsCTgh7MwJAGspoWY" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -72,7 +66,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET 启动设置配置文件.telegram-downloader: http.executor": "Debug",
+    ".NET 启动设置配置文件.telegram-downloader: http.executor": "Run",
     ".NET 项目.telegram.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
