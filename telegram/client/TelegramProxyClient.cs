@@ -6,17 +6,15 @@ namespace Telegram.client;
 
 public delegate TR Acceept<out TR>();
 
-public abstract class TelegramProxyClient : Client
+public class TelegramProxyClient : Client
 {
-    protected TelegramProxyClient(
+    public TelegramProxyClient(
         string appId,
         string apiHash,
         string phoneNumber,
         Acceept<string?> verficationCodeProvider,
         string proxyAddress,
-        int proxyPort,
-        string? proxyUsername = null,
-        string? proxyPassword = null
+        int proxyPort
     )
         : base(what => what switch
         {
@@ -30,12 +28,12 @@ public abstract class TelegramProxyClient : Client
     {
         TcpHandler = (address, port) =>
         {
-            var proxy = CreateProxyClient(proxyAddress, proxyPort, proxyUsername, proxyPassword);
+            var proxy = new HttpProxyClient(proxyAddress, proxyPort);
             return Task.FromResult(proxy.CreateConnection(address, port));
         };
     }
 
-    public async Task<Messages_MessagesBase> GetMessages(int chatId, params InputMessage[] messageIds)
+    public async Task<Messages_MessagesBase> GetMessage(int chatId, InputMessage messageId)
     {
         var mc = await this.Channels_GetChannels(new InputChannel(chatId, 0));
         if (!mc.chats.TryGetValue(chatId, out var chat))
@@ -43,84 +41,21 @@ public abstract class TelegramProxyClient : Client
 
         if (chat is not Channel channel) throw new WTException("URL does not identify a valid Channel");
 
-        return await this.Channels_GetMessages(channel, messageIds);
+        return await this.Channels_GetMessages(channel, messageId);
     }
 
-    public async Task DownloadMessages(string outputDir, int chatId, params InputMessage[] messageIds)
+    public async Task DownloadMessageVideos(string outputDir, int chatId, InputMessage messageId)
     {
-        var messages = await GetMessages(chatId, messageIds);
+        var messages = await GetMessage(chatId, messageId);
 
-        var tasks = new List<Task<string>>();
         foreach (var msg in messages.Messages)
             if (msg is Message { media: MessageMediaDocument { document: Document document } })
             {
                 var filename = $"{msg.ID}-{document.Filename}";
-                tasks.Add(DownloadFileAsync(document, File.Create($"{outputDir}/{filename}")));
+                var fileStream = File.Create($"{outputDir}/{filename}");
+                await DownloadFileAsync(document, fileStream);
+
+                fileStream.Close();
             }
-
-        Task.WaitAll(tasks);
-    }
-
-    public async Task DownloadMessagesFromUrl(string beginUrl, string endUrl)
-    {
-        var beginId = getMessageIdFromUrl(beginUrl);
-        var endId = getMessageIdFromUrl(endUrl);
-
-        var messageCount = endId - beginId + 1;
-
-        var messageIds = new InputMessage[messageCount];
-        for (var i = 0; i < messageCount; i++) messageIds[i] = beginId + i;
-
-        await DownloadMessages("E:\\videos", getChatFromUrl(beginUrl), messageIds);
-    }
-
-    protected abstract IProxyClient CreateProxyClient(string proxyAddress, int proxyPort, string? proxyUsername = null, string? proxyPassword = null);
-
-    private int getChatFromUrl(string url)
-    {
-        var splits = url.Split("/");
-        return int.Parse(splits[4]);
-    }
-
-    private int getMessageIdFromUrl(string url)
-    {
-        var splits = url.Split("/");
-        return int.Parse(splits[5]);
-    }
-}
-
-public class TelegramHttpProxyClient(
-    string appId,
-    string apiHash,
-    string phoneNumber,
-    Acceept<string?> verificationCodeProvider,
-    string proxyAddress,
-    int proxyPort,
-    string? proxyUsername = null,
-    string? proxyPassword = null
-)
-    : TelegramProxyClient(appId, apiHash, phoneNumber, verificationCodeProvider, proxyAddress, proxyPort, proxyUsername, proxyPassword)
-{
-    protected override IProxyClient CreateProxyClient(string proxyAddress, int proxyPort, string? proxyUsername = null, string? proxyPassword = null)
-    {
-        return new HttpProxyClient(proxyAddress, proxyPort);
-    }
-}
-
-public class TelegramSocks5ProxyClient(
-    string appId,
-    string apiHash,
-    string phoneNumber,
-    Acceept<string?> verificationCodeProvider,
-    string proxyAddress,
-    int proxyPort,
-    string? proxyUsername = null,
-    string? proxyPassword = null
-)
-    : TelegramProxyClient(appId, apiHash, phoneNumber, verificationCodeProvider, proxyAddress, proxyPort, proxyUsername, proxyPassword)
-{
-    protected override IProxyClient CreateProxyClient(string proxyAddress, int proxyPort, string? proxyUsername = null, string? proxyPassword = null)
-    {
-        return new Socks5ProxyClient(proxyAddress, proxyPort, proxyUsername, proxyPassword);
     }
 }

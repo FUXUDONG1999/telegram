@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telegram", "telegram\telegram.csproj", "{E48B0099-7C00-410A-AE80-182FA4216831}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "downloader", "downloader\downloader.csproj", "{9D7F9DEF-74F4-45B3-9D76-99CD7C2C42AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telegram-downloader", "telegram-downloader\telegram-downloader.csproj", "{9AC3E4D2-B526-4CD0-B1F9-160278DF6C9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{E48B0099-7C00-410A-AE80-182FA4216831}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E48B0099-7C00-410A-AE80-182FA4216831}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E48B0099-7C00-410A-AE80-182FA4216831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D7F9DEF-74F4-45B3-9D76-99CD7C2C42AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7F9DEF-74F4-45B3-9D76-99CD7C2C42AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7F9DEF-74F4-45B3-9D76-99CD7C2C42AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7F9DEF-74F4-45B3-9D76-99CD7C2C42AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC3E4D2-B526-4CD0-B1F9-160278DF6C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC3E4D2-B526-4CD0-B1F9-160278DF6C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC3E4D2-B526-4CD0-B1F9-160278DF6C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC3E4D2-B526-4CD0-B1F9-160278DF6C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
