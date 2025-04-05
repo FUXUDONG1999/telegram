@@ -1,16 +1,11 @@
-﻿using System.Collections.Concurrent;
-using downloader.model;
+﻿using downloader.model;
 using downloader.queue;
 
 namespace downloader.manager;
 
 public abstract class DownloadManager<T>
 {
-    private readonly ConcurrentDictionary<string, DownloadTask<T>> _activeTasks = [];
-
-    private readonly ConcurrentDictionary<string, DownloadTask<T>> _completedTasks = [];
-
-    private readonly DownloadTaskQueue<T> _downloadTaskQueue = new();
+    private readonly IDownloadQueue<T> _downloadTaskQueue = new DownloadTaskQueue<T>();
 
     private volatile bool _isRunning;
 
@@ -42,12 +37,12 @@ public abstract class DownloadManager<T>
 
             while (_isRunning)
             {
-                if (_activeTasks.Count >= _maxWorkers) continue;
+                if (_downloadTaskQueue.ActiveTasksCount >= _maxWorkers) continue;
 
                 var task = _downloadTaskQueue.Dequeue();
                 task.Status = DownloadTaskStatus.Downloading;
                 task.BeginTime = DateTime.Now;
-                _activeTasks[task.TaskId] = task;
+                _downloadTaskQueue.AddActive(task);
 
                 ThreadPool.QueueUserWorkItem(async void (_) =>
                     {
@@ -64,8 +59,7 @@ public abstract class DownloadManager<T>
                         finally
                         {
                             task.EndTime = DateTime.Now;
-                            _activeTasks.Remove(task.TaskId, out var _);
-                            _completedTasks[task.TaskId] = task;
+                            _downloadTaskQueue.AddCompleted(task);
                         }
                     },
                     task
@@ -74,17 +68,16 @@ public abstract class DownloadManager<T>
         });
     }
 
-    public virtual void Stop()
+    public void Stop()
     {
         if (_isRunning) return;
 
         _isRunning = false;
     }
 
-    public virtual DownloadTask<T>? GetTask(string taskId)
+    public IEnumerable<DownloadTask<T>> GetTasks()
     {
-        var task = _activeTasks.GetValueOrDefault(taskId);
-        return task ?? _completedTasks.GetValueOrDefault(taskId);
+        return _downloadTaskQueue.GetTasks();
     }
 
     protected abstract Task ProcessTask(DownloadTask<T> task);

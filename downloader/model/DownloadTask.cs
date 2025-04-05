@@ -10,14 +10,19 @@ public class DownloadTask<T>(
 
     public T Data { get; set; } = data;
 
-    public float Progress { get; set; } = 0.0f;
+    public double Progress { get; set; } = 0.0f;
 
     public string ErrorMessage { get; set; } = "";
 
     public DownloadTaskStatus Status { get; set; }
 
-
     public DateTime BeginTime { get; set; }
 
     public DateTime EndTime { get; set; }
+
+    public string TaskName { get; set; } = "";
+
+    public string FilePath { get; set; } = "";
+
+    public long FileSize { get; set; }
 }

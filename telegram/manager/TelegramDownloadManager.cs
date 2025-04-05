@@ -2,7 +2,8 @@
 using downloader.model;
 using Telegram.client;
 using Telegram.config;
-using Telegram.models;
+using TL;
+using Chat = Telegram.models.Chat;
 
 namespace Telegram.manager;
 
@@ -28,6 +29,29 @@ public class TelegramDownloadManager(string outputDir, Acceept<string?> verficat
     protected override async Task ProcessTask(DownloadTask<Chat> task)
     {
         var data = task.Data;
-        await _client.DownloadMessageVideos(outputDir, data.ChatId, data.MessageId);
+        var messageGroup = await _client.GetMessage(data.ChatId, data.MessageId);
+        var messages = messageGroup.Messages;
+        if (messages.Length <= 0) return;
+
+        var mediaMessage = messages.First(m => m is Message { media: MessageMediaDocument });
+        if (mediaMessage is Message { media: MessageMediaDocument { document: Document document } })
+        {
+            var filename = $"{mediaMessage.ID}-{document.Filename}";
+            var filePath = $"{outputDir}/{filename}";
+
+            task.FilePath = filePath;
+            task.TaskName = filename;
+            task.FileSize = document.size;
+
+            var fileStream = File.Create(filePath);
+            await _client.DownloadFileAsync(
+                document,
+                fileStream,
+                null,
+                (progress, total) => { task.Progress = (double)progress / total; }
+            );
+
+            fileStream.Close();
+        }
     }
 }

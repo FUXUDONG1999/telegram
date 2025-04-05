@@ -26,6 +26,7 @@ public class TelegramProxyClient : Client
             _ => null
         })
     {
+        Helpers.Log = (i, s) => { };
         TcpHandler = (address, port) =>
         {
             var proxy = new HttpProxyClient(proxyAddress, proxyPort);
@@ -42,20 +43,5 @@ public class TelegramProxyClient : Client
         if (chat is not Channel channel) throw new WTException("URL does not identify a valid Channel");
 
         return await this.Channels_GetMessages(channel, messageId);
-    }
-
-    public async Task DownloadMessageVideos(string outputDir, int chatId, InputMessage messageId)
-    {
-        var messages = await GetMessage(chatId, messageId);
-
-        foreach (var msg in messages.Messages)
-            if (msg is Message { media: MessageMediaDocument { document: Document document } })
-            {
-                var filename = $"{msg.ID}-{document.Filename}";
-                var fileStream = File.Create($"{outputDir}/{filename}");
-                await DownloadFileAsync(document, fileStream);
-
-                fileStream.Close();
-            }
     }
 }

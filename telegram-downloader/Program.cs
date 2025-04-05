@@ -12,7 +12,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment()) app.MapOpenApi();
 app.UseHttpsRedirection();
 
-var manager = new TelegramDownloadManager(TelegramConfig.DownloadOutputDir, Console.ReadLine);
+var manager = new TelegramDownloadManager(TelegramConfig.DownloadOutputDir, () =>
+{
+    Console.WriteLine("Please enter verification code:");
+    return Console.ReadLine();
+});
 manager.Start();
 
 app.MapGet(
@@ -34,5 +38,16 @@ app.MapPost(
 
         return "Task added";
     });
+
+app.MapGet(
+    "/stopTask", () =>
+    {
+        manager.Stop();
+
+        return "Task stopped";
+    });
+
+app.MapGet(
+    "/getTasks", () => manager.GetTasks().OrderBy(t => t.AddTime).ToList());
 
 app.Run();

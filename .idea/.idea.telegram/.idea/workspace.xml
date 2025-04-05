@@ -11,8 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="724fb3c1-8c63-4154-b139-0909637b2f54" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/downloader/queue/IDownloadQueue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.telegram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.telegram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloader/manager/DownloadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/downloader/manager/DownloadManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloader/model/DownloadTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/downloader/model/DownloadTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloader/queue/DownloadTaskQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/downloader/queue/DownloadTaskQueue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram-downloader/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/telegram-downloader/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram-downloader/sessions" beforeDir="false" afterPath="$PROJECT_DIR$/telegram-downloader/sessions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/telegram.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram/client/TelegramProxyClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/client/TelegramProxyClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram/manager/TelegramDownloadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/manager/TelegramDownloadManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,15 +48,21 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/831d23e56149cd59c40fc00c7feb7c5334bd19c4/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bb06f64c178142b0b2d10172f56d4911e8e928/46/3f28ae1e/ThreadPool.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1bfff8bdfabfa59f28daf6ad2e22606e402a98281b6b307dc15d91c1c9728646/Client.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2f2b1d92f1ffcf2dabd664473f8c9dafa6039595ac228ce4b75a0f1619c5991/AsyncTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/476a31b5efb32cab64c2df37e97d53a06167bcf8e4f1f3b58e7611b5beb3ba/Helpers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/53b0d531c06faf86bf2ae111a9a2dbce4c52a9153feb9966ade60289c71bf52/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6ef8e7d549f6bfb5b9eafaaa0ff48d8cbfc564f32be26323b5f60e63aef4dd1/SafeFileHandle.Windows.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7964f45d5e9adaac61cb4a8b7a7869227219ad99235d869c94e1ad5a6f68e0/TL.Xtended.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f275024ac8b3d42102d727c497f69d8b74c3ead9670e86631848e5296acdf9d/TL.SchemaFuncs.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9769f0874b89d9a174c39e6c977aef6d979daefa49c7f3c239ef268493ea12/SemaphoreSlim.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b6788580148d673bfdb5b15f4352c74f2b6f2255417806f1c796ccdbf8bf8bf/ThreadPoolWorkQueue.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d8fcf94b84793270cc19674dbcff5e3b86ffb9666fd1ea9dc9eb9181f74a75/Client.Helpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d8fcf94b84793270cc19674dbcff5e3b86ffb9666fd1ea9dc9eb9181f74a75/Client.Helpers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de533de9e7b3ea79d36aeac96b6426559cfe9f3a96b1ab66b51ce3febeda25f/TimeSpan.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de8a243f75215d958afa80cf80a41b4981a44efea7db93bffcdaf7bd6ba378c0/Number.Parsing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e02b702ce4f372d558d1dc73546cad13332021d18722390e786b88927721cb8/TL.Schema.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e399fc861c188bd19ebde14346e2f5f2c1a54c1c0d6fbd5cbe05227afe6d/CollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e4e37e1036b3e241aed1b78e4e26a8c6718a2e5b/TL.Generated.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -65,7 +79,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;.NET 启动设置配置文件.telegram-downloader: http.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET 启动设置配置文件.telegram-downloader: http.executor&quot;: &quot;Run&quot;,
     &quot;.NET 项目.telegram.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -108,7 +122,9 @@
       <workItem from="1743762237089" duration="6301000" />
       <workItem from="1743770127911" duration="1365000" />
       <workItem from="1743771555030" duration="43000" />
-      <workItem from="1743780698147" duration="219000" />
+      <workItem from="1743780698147" duration="1582000" />
+      <workItem from="1743782321771" duration="776000" />
+      <workItem from="1743816715253" duration="1037000" />
     </task>
     <task id="LOCAL-00001" summary="dev">
       <option name="closed" value="true" />
@@ -126,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743771481573</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加readme">
+      <option name="closed" value="true" />
+      <created>1743780930925</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743780930925</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +161,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="dev" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev" />
+    <MESSAGE value="添加readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加readme" />
   </component>
 </project>
