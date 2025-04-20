@@ -2,7 +2,7 @@
 
 public class TelegramConfig
 {
-    public const string DownloadOutputDir = "E:\\videos";
+    public const string DownloadOutputDir = "E:\\video\\pornhub";
 
     public const string AppId = "28677808";
 

@@ -29,7 +29,7 @@ public class TelegramProxyClient : Client
         Helpers.Log = (i, s) => { };
         TcpHandler = (address, port) =>
         {
-            var proxy = new HttpProxyClient(proxyAddress, proxyPort);
+            var proxy = new Socks5ProxyClient(proxyAddress, proxyPort);
             return Task.FromResult(proxy.CreateConnection(address, port));
         };
     }
