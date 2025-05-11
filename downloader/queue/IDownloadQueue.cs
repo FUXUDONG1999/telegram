@@ -6,6 +6,10 @@ public interface IDownloadQueue<T>
 {
     public int ActiveTasksCount { get; }
 
+    public int CompletedTasksCount { get; }
+
+    public int WaitingTasksCount { get; }
+
     public void Enqueue(DownloadTask<T> task);
 
     public DownloadTask<T> Dequeue();
@@ -14,5 +18,5 @@ public interface IDownloadQueue<T>
 
     public void AddCompleted(DownloadTask<T> task);
 
-    public IEnumerable<DownloadTask<T>> GetTasks();
+    public ICollection<DownloadTask<T>> GetTasks();
 }

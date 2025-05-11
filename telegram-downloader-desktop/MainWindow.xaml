@@ -1,0 +1,80 @@
+﻿<Window x:Class="telegram_downloader_desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="TelegramDownloader" Height="600" Width="600">
+	<Grid ShowGridLines="True">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="150" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<Label
+			Grid.Row="0"
+			Content="开始地址"
+			HorizontalAlignment="Left"
+			Margin="61,38,0,0"
+			VerticalAlignment="Top" />
+		<Label
+			Grid.Row="0"
+			Content="结束地址"
+			HorizontalAlignment="Left"
+			Margin="61,88,0,0"
+			VerticalAlignment="Top" />
+		<TextBox
+			x:Name="BeginUrl"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			Margin="122,30,0,0"
+			TextWrapping="Wrap"
+			VerticalAlignment="Top"
+			Width="300"
+			Height="32"
+			FontSize="18" />
+		<TextBox
+			x:Name="EndUrl"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			Margin="122,82,0,0"
+			TextWrapping="Wrap"
+			VerticalAlignment="Top"
+			Width="300"
+			Height="32"
+			FontSize="18" />
+		<Button
+			Grid.Row="0"
+			Content="下载"
+			HorizontalAlignment="Left"
+			Margin="471,0,0,0"
+			VerticalAlignment="Center"
+			Height="42"
+			Width="70"
+			Click="DownloadButton_Click" />
+		<Label
+			Grid.Row="0"
+			x:Name="Label"
+			Content=""
+			HorizontalAlignment="Left"
+			Margin="61,120,0,0"
+			VerticalAlignment="Top" />
+
+		<ListView
+			x:Name="DownloadTasks"
+			Grid.Row="1">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn
+						Header="名称"
+						Width="500"
+						DisplayMemberBinding="{Binding TaskName}" />
+					<GridViewColumn
+						Header="进度"
+						Width="100"
+						DisplayMemberBinding="{Binding Progress}" />
+				</GridView>
+			</ListView.View>
+		</ListView>
+	</Grid>
+</Window>
